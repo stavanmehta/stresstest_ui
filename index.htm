@@ -2,10 +2,35 @@
     <head>
     <title>StressTest UI</title>
     <link href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.98.0/css/materialize.min.css" rel="stylesheet"/>
+    <link href="https://fonts.googleapis.com/css?family=Lato" rel="stylesheet">
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
     <link href="css/style.css" rel="stylesheet"/>
     <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
     <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.98.0/js/materialize.min.js"></script>
     <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mustache.js/2.3.0/mustache.min.js"></script>
+    <script type="text/javascript" src="js/events.js"></script>
+    <script type="text/javascript" src="js/routes.js"></script>
     </head>
+    <body class="row grey lighten-5">
+        <aside class="col m1 blue-grey darken-3 navigation">
+            <ul>
+                <li>
+                    <a href="#settings"><img src="images/profile.jpg" class="responsive-img circle profileImage"></a>
+                </li>
+                <li>
+                    <a href="#tests" id="tests" class="blue-grey-text"><i class="material-icons">assignment</i>Tests</a>
+                </li>
+                <li>
+                    <a href="#results" id="results" class="blue-grey-text"><i class="material-icons">assessment</i>Results</a>
+                </li>
+                <li>
+                    <a href="#documentation" id="documentation" class="blue-grey-text"><i class="material-icons">live_help</i>Documentation</a>
+                </li>
+                <li>
+                    <a href="#activity" id="activity" class="blue-grey-text"><i class="material-icons">timelapse</i>Activity</a>
+                </li>
+            </ul>
+        </aside>
+        <section class="stage col m11 offset-m1"></section>
+    </body>
 </html>
