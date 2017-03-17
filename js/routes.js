@@ -8,6 +8,7 @@ var router = (function(){
         $(".navigation a").removeClass("active");
         $(".navigation").find("a[href='#"+viewName+"']").addClass("active");
         if(viewName === "documentation"){$(document).trigger("loadDocumentation");};
+        if(viewName === "results"){$(document).trigger("loadResults");};
     }
     return{
         loadView:loadView

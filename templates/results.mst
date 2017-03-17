@@ -1,0 +1,47 @@
+<h1>Results</h1>
+<div class="row">
+<div class="col m3 s12 input-group">
+    <label for="pageCountSet">Show:</label>
+    <select id="pageCountSet" class="pageCountSet">
+        <option value="25">25 entries</option>
+        <option value="50">50 entries</option>
+        <option value="100">100 entries</option>
+    </select>
+</div>
+</div>
+<table class="results striped responsive-table">
+<thead>
+    <tr>
+        <th>Test Suite</th>
+        <th>Start Time</th>
+        <th>End Time</th>
+        <th>Status</th>
+        <th>Test Cases</th>
+        <th>Passed</th>
+        <th>Failed</th>
+        <th>Errors</th>
+        <th>Logs</th>
+        <th>Screenshots</th>
+    </tr>
+</thead>
+<tbody>
+{{#results}}
+<tr>
+    <td>{{testSuite}}</td>
+    <td>{{startTime}}</td>
+    <td>{{endTime}}</td>
+    <td>{{status}}</td>
+    <td>{{testCases}}</td>
+    <td>{{passed}}</td>
+    <td>{{failed}}</td>
+    <td>{{errors}}</td>
+    <td>{{logs}}</td>
+    <td>
+        {{#screenshots}}
+            <a href="{{path}}" class="scr">{{filename}}</a>
+        {{/screenshots}}
+    </td>
+</tr>
+{{/results}}
+</tbody>
+<table>

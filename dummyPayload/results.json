@@ -1,0 +1,30 @@
+{"results":[
+    {
+        "testSuite":"Test Google",
+        "startTime":"2017-01-27 08:12:48",
+        "endTime":"2017-01-27 08:14:00",
+        "status":"finished",
+        "testCases":2,
+        "passed":0,
+        "failed":0,
+        "errors":1,
+        "logs":"[ERRORS] Could not click on the web element with the locator...",
+        "screenshots":[
+            {"filename":"1_open_google.png","path":"images/1_open_google.png"}
+        ]
+    },
+    {
+        "testSuite":"Test Google",
+        "startTime":"2017-01-27 08:12:48",
+        "endTime":"2017-01-27 08:14:00",
+        "status":"finished",
+        "testCases":2,
+        "passed":0,
+        "failed":0,
+        "errors":1,
+        "logs":"[ERRORS] Could not click on the web element with the locator...",
+        "screenshots":[
+            {"filename":"1_open_google.png","path":"images/1_open_google.png"}
+        ]
+    }
+]}
