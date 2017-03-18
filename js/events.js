@@ -27,6 +27,7 @@
                 $(".stage").html(rendered);
                 // Initiate material select
                 $('select').material_select();
+                $("table.results").tablesorter();
             }
         })
     });

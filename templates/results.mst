@@ -45,3 +45,6 @@
 {{/results}}
 </tbody>
 <table>
+<div class="row center-align">
+<a class="loadMoreResults btn cyan-text blue-grey darken-4">Load more results</a>
+</div>

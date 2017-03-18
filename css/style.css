@@ -24,3 +24,28 @@
     border: 2px solid #1de9b6;
     width: 65%;
 }
+table.results{
+    font-size: 13px;
+}
+th.headerSortUp { 
+    background-image: url(../images/asc.gif); 
+}
+th.headerSortDown { 
+    background-image: url(../images/desc.gif); 
+}
+th.header { 
+    background-image: url(../images/bg.gif); 
+    cursor: pointer; 
+    font-weight: bold; 
+    background-repeat: no-repeat; 
+    background-position: center right; 
+    min-width: 100px;
+    margin-left: -1px; 
+}
+.loadMoreResults {
+    margin-top: 10px;
+} 
+/*Overrides*/
+table.striped>tbody>tr>td{
+    vertical-align: top;
+}
