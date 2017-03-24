@@ -44,7 +44,14 @@ th.header {
 }
 .loadMoreResults {
     margin-top: 10px;
+}
+.addTestSuite > i{
+    vertical-align: bottom;
 } 
+.tsControls{
+    cursor: pointer;
+    margin: 0 5px;
+}
 /*Overrides*/
 table.striped>tbody>tr>td{
     vertical-align: top;

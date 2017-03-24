@@ -1,6 +1,7 @@
 "use strict";
 (function(){
     var resultsView = null;
+    var testSuitesView = null;
     $(document).on("loadDocumentation",function(){
         $.ajax({
             url:"dummyPayload/dummyDocumentation.htm",
@@ -28,6 +29,27 @@
                 // Initiate material select
                 $('select').material_select();
                 $("table.results").tablesorter();
+            }
+        });
+    });
+    $(document).on("loadtestsuites",function(){
+        if(!testSuitesView){
+            $.get("templates/testsuites.mst",function(template){
+                testSuitesView = template;
+                $(document).trigger("loadtestsuites");
+            });
+            return;
+        }
+        $.ajax({
+            "url":"dummyPayload/testSuitesResult.json",
+            "type":"GET",
+            "dataType":"json",
+            "success":function(rtnData){
+                var rendered = Mustache.render(testSuitesView,rtnData);
+                $(".stage").html(rendered);
+                // Initiate material select
+                // $('select').material_select();
+                // $("table.results").tablesorter();
             }
         })
     });
