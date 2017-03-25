@@ -1,5 +1,17 @@
+<div id="newTestSuite" class="modal blue-grey darken-3 white-text">
+    <div class="modal-content">
+      <h4>New Test Suite</h4>
+      <div class="input-group">
+        <label for="newTestSuiteName">Test suite Name</label>
+        <input type="text" name="newTestSuiteName" class="newTestSuiteName" id="newTestSuiteName"/>
+      </div>
+    </div>
+    <div class="modal-footer blue-grey darken-3">
+      <a class="modal-action modal-close waves-effect waves-green btn white-text submitTestSuite">Add</a>
+    </div>
+  </div>
 <h1>Test Suites</h1>
-<a class="addTestSuite"><i class="material-icons">create_new_folder</i> Add new testsuite</a>
+<a class="addTestSuite" href="#newTestSuite"><i class="material-icons">create_new_folder</i> Add new testsuite</a>
 <table class="testSuites striped responsive-table">
 <thead>
 <tr>
@@ -7,6 +19,7 @@
 <th>Actions</th>
 </tr>
 </thead>
+<tbody>
 {{#testSuites}}
 <tr>
 <td>{{testSuiteName}}</td>
@@ -19,6 +32,5 @@
 </td>
 </tr>
 {{/testSuites}}
-<tbody>
 </tbody>
 </table>

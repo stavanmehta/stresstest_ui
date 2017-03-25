@@ -2,6 +2,7 @@
 (function(){
     var resultsView = null;
     var testSuitesView = null;
+    var singleTestSuiteTemplate = null;
     $(document).on("loadDocumentation",function(){
         $.ajax({
             url:"dummyPayload/dummyDocumentation.htm",
@@ -47,10 +48,23 @@
             "success":function(rtnData){
                 var rendered = Mustache.render(testSuitesView,rtnData);
                 $(".stage").html(rendered);
+                $('.modal').modal();
+                if(!singleTestSuiteTemplate){
+                    $.get("templates/testsuite.mst",function(template){
+                        singleTestSuiteTemplate = template;
+                    });
+                    return;
+                }
                 // Initiate material select
                 // $('select').material_select();
                 // $("table.results").tablesorter();
             }
         })
+    });
+    $(document).on("click",".submitTestSuite",function(){
+        // Test suite id is expected from ajax call
+        var newTestSuite = {"testSuiteName":$(".newTestSuiteName").val(),"testSuiteId":200};
+        var rendered = Mustache.render(singleTestSuiteTemplate,newTestSuite);
+        $(".testSuites tbody").append(rendered);
     });
 })()

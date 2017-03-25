@@ -1,6 +1,9 @@
 *{
     font-family: 'Lato', sans-serif;
 }
+a{
+    cursor: pointer;
+}
 .navigation{
     height: 100vh;
     position: fixed;
