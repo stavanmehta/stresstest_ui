@@ -1,0 +1,10 @@
+{
+    "testSuiteName":"Wikipedia Test Suite",
+    "creationDate":"1st April 2017",
+    "testCases":[
+        {"testCaseName":"Goto Wikipedia","testCaseId":1},
+        {"testCaseName":"Search for Test Automation","testCaseId":2},
+        {"testCaseName":"Goto random article","testCaseId":3},
+        {"testCaseName":"Take screenshot of the page","testCaseId":4}
+    ]
+}

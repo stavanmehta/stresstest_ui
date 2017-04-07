@@ -3,6 +3,7 @@
     var resultsView = null;
     var testSuitesView = null;
     var singleTestSuiteTemplate = null;
+    var testSuiteDetailView = null;
     $(document).on("loadDocumentation",function(){
         $.ajax({
             url:"dummyPayload/dummyDocumentation.htm",
@@ -67,4 +68,22 @@
         var rendered = Mustache.render(singleTestSuiteTemplate,newTestSuite);
         $(".testSuites tbody").append(rendered);
     });
+    $(document).on("loadTestSuiteDetails",function(e,data){
+        if(!testSuiteDetailView){
+            $.get("templates/testSuiteDetails.mst",function(template){
+                testSuiteDetailView = template;
+                $(document).trigger("loadTestSuiteDetails",[data]);
+            });
+        }else{
+            $.ajax({
+                "url":"dummyPayload/testSuiteDetails.json",
+                "type":"GET",
+                "dataType":"json",
+                "success":function(rtnData){
+                    var rendered = Mustache.render(testSuiteDetailView,rtnData);
+                    $(".stage").html(rendered);
+                }
+            });
+        }
+    })
 })()
