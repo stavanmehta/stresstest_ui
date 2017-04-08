@@ -82,6 +82,13 @@
                 "success":function(rtnData){
                     var rendered = Mustache.render(testSuiteDetailView,rtnData);
                     $(".stage").html(rendered);
+                    // Make the rows sortable by dragging
+                    $(".sortableTable").sortable({
+                        containerSelector: 'table',
+                        itemPath: '> tbody',
+                        itemSelector: 'tr',
+                        placeholder: '<tr class="placeholder"/>'
+                    });
                 }
             });
         }

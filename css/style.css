@@ -55,6 +55,25 @@ th.header {
     cursor: pointer;
     margin: 0 5px;
 }
+/*Styles for dragggable rows*/
+body.dragging, body.dragging * {
+  cursor: move !important;
+}
+
+.dragged {
+  position: absolute;
+  opacity: 0.5;
+  z-index: 2000;
+}
+
+.sortableTable .placeholder {
+  position: relative;
+  /** More li styles **/
+}
+.sortableTable .placeholder:before {
+  position: absolute;
+  /** Define arrowhead **/
+}
 /*Overrides*/
 table.striped>tbody>tr>td{
     vertical-align: top;

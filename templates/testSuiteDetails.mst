@@ -1,2 +1,23 @@
 <h1>{{testSuiteName}}</h1>
 <p>{{creationDate}}</p>
+<a class="addTestSuite" href="#newTestSuite"><i class="material-icons">create_new_folder</i> Add new Test Case</a>
+<table class="striped sortableTable">
+<thead>
+<tr>
+<th>Test Cases</th>
+<th>Actions</th>
+</tr>
+</thead>
+<tbody>
+{{#testCases}}
+<tr>
+<td>{{testCaseName}}</td>
+<td>
+<a class="editTestSuites tsControls" href="#testSuiteDetails?{{testCaseId}}" tsId="{{testCaseId}}" title="Edit"><i class="material-icons">mode_edit</i></a>
+<a class="duplicateTestSuites tsControls" tsId="{{testCaseId}}" title="Duplicate"><i class="material-icons">control_point_duplicate</i></a>
+<a class="deleteTestSuites tsControls" tsId="{{testCaseId}}" title="Delete"><i class="material-icons">delete_forever</i></a>
+</td>
+</tr>
+{{/testCases}}
+</tbody>
+</table>
