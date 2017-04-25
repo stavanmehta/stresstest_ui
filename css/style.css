@@ -48,9 +48,12 @@ th.header {
 .loadMoreResults {
     margin-top: 10px;
 }
-.addTestSuite > i{
+.addTestCase > i,.saveTestSuite > i{
     vertical-align: bottom;
 } 
+.saveTestSuite{
+    margin-left: 10px;
+}
 .tsControls{
     cursor: pointer;
     margin: 0 5px;

@@ -1,0 +1,21 @@
+<h1>{{testSuiteName}}</h1>
+<p>{{creationDate}}</p>
+<a class="addTestStep" href="#newTestStep"><i class="material-icons">create_new_folder</i> Add new Test Case</a><a class="saveTestCase"><i class="material-icons">save</i> Save Changes</a>
+<table class="striped sortableTable">
+<thead>
+<tr>
+<th>Test Steps</th>
+<th>Actions</th>
+</tr>
+</thead>
+<tbody>
+{{#testCases}}
+<tr>
+<td>{{testCaseName}}</td>
+<td>
+<a class="deleteTestCases tsControls" tsId="{{testCaseId}}" title="Delete"><i class="material-icons">delete_forever</i></a>
+</td>
+</tr>
+{{/testCases}}
+</tbody>
+</table>

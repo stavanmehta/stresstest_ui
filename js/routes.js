@@ -13,6 +13,12 @@ var router = (function(){
         if(viewName.indexOf("testSuiteDetails") !== -1){
             var testSuiteId = ((window.location.hash).split("?"))[1];
             $(document).trigger("loadTestSuiteDetails",[testSuiteId]);
+            return;
+        }
+        if(viewName.indexOf("testCaseDetails") !== -1){
+            var testCaseId = ((window.location.hash).split("?"))[1];
+            $(document).trigger("loadTestCaseDetails",[testCaseId]);
+            return;
         }
     }
     return{

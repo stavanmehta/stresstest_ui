@@ -1,10 +1,10 @@
 {
-    "testSuiteName":"Wikipedia Test Suite",
+    "Feature":"Wikipedia Test Suite",
     "creationDate":"1st April 2017",
-    "testCases":[
-        {"testCaseName":"Goto Wikipedia","testCaseId":1},
-        {"testCaseName":"Search for Test Automation","testCaseId":2},
-        {"testCaseName":"Goto random article","testCaseId":3},
-        {"testCaseName":"Take screenshot of the page","testCaseId":4}
+    "scenarios":[
+        {"scenario":"Goto Wikipedia","testCaseId":1},
+        {"scenario":"Search for Test Automation","testCaseId":2},
+        {"scenario":"Goto random article","testCaseId":3},
+        {"scenario":"Take screenshot of the page","testCaseId":4}
     ]
 }

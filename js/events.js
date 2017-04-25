@@ -4,6 +4,7 @@
     var testSuitesView = null;
     var singleTestSuiteTemplate = null;
     var testSuiteDetailView = null;
+    var singleTestCaseTemplate = null;
     $(document).on("loadDocumentation",function(){
         $.ajax({
             url:"dummyPayload/dummyDocumentation.htm",
