@@ -5,6 +5,9 @@
     var singleTestSuiteTemplate = null;
     var testSuiteDetailView = null;
     var singleTestCaseTemplate = null;
+    var newTestCaseTemplate = null;
+    var newTestCaseActions;
+    var dropdownTemplate = null;
     $(document).on("loadDocumentation",function(){
         $.ajax({
             url:"dummyPayload/dummyDocumentation.htm",
@@ -13,6 +16,20 @@
                 $(".stage").html(rtnData);
             }
         });
+    });
+    if(!resultsView){
+        $.get("templates/dropdownlayout.mst",function(template){
+            dropdownTemplate = template;
+        });
+    }
+    // To be placed after login
+    $.ajax({
+        "url":"dummyPayload/userActions.json",
+        "type":"GET",
+        "dataType":"json",
+        "success":function(rtnData){
+            newTestCaseActions = rtnData;
+        }
     });
     $(document).on("loadResults",function(){
         if(!resultsView){
@@ -93,5 +110,38 @@
                 }
             });
         }
-    })
+    });
+    $(document).on("newtestcase",function(e,data){
+        if(!newTestCaseTemplate){
+            $.get("templates/newTestCase.mst",function(template){
+                newTestCaseTemplate = template;
+                $(document).trigger("newtestcase",[data]);
+            });
+        }else{
+            var rendered = Mustache.render(newTestCaseTemplate);
+            $(".stage").html(rendered);
+            var firstFormControl = newTestCaseActions[0];
+            if(firstFormControl.actionType === "userSelects"){
+                var selectRendered = Mustache.render(dropdownTemplate,{"options":firstFormControl.selectOptions});
+            }
+            $("#newTestCase").prepend("<div class='col s12 input-group'><label for='"+firstFormControl.fieldName+"'>"+firstFormControl.label+"</label><select name='"+firstFormControl.fieldName+"' class='"+firstFormControl.fieldName+" triggersAction' id='"+firstFormControl.fieldName+"'>"+selectRendered+"</select></div>");
+            $('.'+firstFormControl.fieldName).material_select();
+        }
+    });
+    $(document).on("change","select.triggersAction",function(e){
+        // Clear all the next elements
+        $(this).closest(".input-group").nextAll(".input-group").remove();
+        var selectedValue = $(this).find("option:selected").val();
+        var formControl = newTestCaseActions.filter(function(action){
+            return action.action === selectedValue;
+        })[0];
+        if(formControl.actionType === "userSelects"){
+            var selectRendered = Mustache.render(dropdownTemplate,{"options":formControl.selectOptions});
+            $(this).closest(".input-group").after("<div class='col s12 input-group'><label for='"+formControl.fieldName+"'>"+formControl.label+"</label><select name='"+formControl.fieldName+"' class='"+formControl.fieldName+" triggersAction' id='"+formControl.fieldName+"'>"+selectRendered+"</select></div>");
+            $('.'+formControl.fieldName).material_select();
+        }
+        if(formControl.actionType === "userInput"){
+            $(this).closest(".input-group").after("<div class='col s12 input-group'><label for='"+formControl.fieldName+"'>"+formControl.label+"</label><input type='text' name='"+formControl.fieldName+"' class='"+formControl.fieldName+" triggersAction' id='"+formControl.fieldName+"'></div>");
+        }
+    });
 })()

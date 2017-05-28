@@ -1,0 +1,26 @@
+[
+    {
+        "action":"Should be",
+        "label":"Should be",
+        "actionType":"userSelects",
+        "fieldName":"should_be",
+        "selectOptions":["Should be equal","Should not be empty"]
+    },
+    {
+        "action":"Should be equal",
+        "label":"Should be equal",
+        "actionType":"userSelects",
+        "fieldName":"should_be_equal",
+        "selectOptions":["Should be equal as integer","Should be not more than"]
+    },
+    {
+        "action":"Should not be empty",
+        "actionType":""
+    },
+    {
+        "action":"Should be not more than",
+        "label":"Should be not more than",
+        "actionType":"userInput",
+        "fieldName":"should_be_not_more_than"
+    }
+]
